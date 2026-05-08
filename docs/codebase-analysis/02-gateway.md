@@ -1,5 +1,7 @@
 # 02. Gateway — 중앙 제어 평면
 
+> ℹ️ 실제 코드(`ws` 라이브러리, TypeBox+AJV 검증, 6가지 인증 모드, startup flow 9단계 등) 기반 정밀 분석은 [deep-dive/01-gateway.md](./deep-dive/01-gateway.md) 참조.
+
 ## Gateway란?
 
 **Gateway**는 OpenClaw의 핵심으로, 로컬에서 동작하는 WebSocket RPC 서버입니다. 모든 클라이언트(macOS 앱, iOS/Android 노드, 웹 UI, CLI)는 Gateway와 WebSocket으로 통신하며, Gateway가 다음을 담당합니다:

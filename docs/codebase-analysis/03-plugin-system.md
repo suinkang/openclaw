@@ -1,5 +1,7 @@
 # 03. 플러그인 / 익스텐션 시스템
 
+> ℹ️ 실제 매니페스트 발견 알고리즘, 보안 검증(POSIX 권한, symlink 거부), LRU 512 캐시, Telegram(grammy)/Anthropic(`@mariozechner/pi-ai`) 의존성 등 코드 기반 정밀 분석은 [deep-dive/02-plugin-loader.md](./deep-dive/02-plugin-loader.md).
+
 ## 개요
 
 OpenClaw의 거의 모든 옵션 기능은 **플러그인**으로 구현됩니다. `extensions/` 디렉토리에 130개 이상의 플러그인이 있으며, 각각은 독립된 npm 패키지처럼 동작합니다. Core(`src/`)는 의도적으로 어떤 플러그인도 hardcode하지 않고, 매니페스트와 계약(contract)을 통해서만 인지합니다.

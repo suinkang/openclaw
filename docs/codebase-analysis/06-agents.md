@@ -1,5 +1,8 @@
 # 06. Agent 런타임과 메모리 시스템
 
+> ⚠️ **일부 추정치는 부정확합니다.** 실제 코드 기반 정확한 분석은 [deep-dive/03-agent-runtime.md](./deep-dive/03-agent-runtime.md) 참조.
+> 주요 정정: Active Memory timeout은 5초가 아닌 **15초** (`DEFAULT_TIMEOUT_MS = 15_000`). promptStyle은 3개가 아닌 **6개**. Active Memory는 sub-agent를 spawn하지 않고 **inline LLM 호출**.
+
 ## Agent란?
 
 OpenClaw의 **Agent**는 단순 LLM 프롬프트가 아니라, 다음을 묶은 실행 단위입니다:

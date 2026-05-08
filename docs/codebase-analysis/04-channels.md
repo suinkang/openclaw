@@ -1,5 +1,7 @@
 # 04. 채널 통합 (Channels)
 
+> ⚠️ **일부 추정 부정확.** 실제 코드 기반 분석은 [deep-dive/04-channels-canvas.md](./deep-dive/04-channels-canvas.md). 정정: Discord는 `@buape/carbon` **사용 안 함** (`discord-api-types` + `ws` 직접). iMessage는 AppleScript가 아니라 **`imsg` CLI + JSON-RPC over stdio**.
+
 ## 개요
 
 OpenClaw는 사용자가 평소 사용하는 메시징 서비스를 통해 AI 어시스턴트에 접근하게 합니다. 각 메시징 서비스는 **채널 플러그인**으로 추상화되며, Core는 일반화된 인터페이스만 인지합니다.

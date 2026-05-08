@@ -1,5 +1,7 @@
 # 05. LLM Provider 통합
 
+> ⚠️ **추정 정정.** 실제 코드 기반 분석은 [deep-dive/02-plugin-loader.md](./deep-dive/02-plugin-loader.md). 핵심 정정: Anthropic 플러그인은 `@anthropic-ai/sdk`가 **아닌 `@mariozechner/pi-ai`** 사용 (모든 프로바이더 공통 추상화 레이어).
+
 ## 개요
 
 OpenClaw는 다양한 LLM 프로바이더를 플러그인으로 지원합니다. 각 프로바이더는 독립된 `extensions/<id>/` 패키지로 구현되며, Core는 통일된 인터페이스만 알고 프로바이더별 세부 구현은 모릅니다.

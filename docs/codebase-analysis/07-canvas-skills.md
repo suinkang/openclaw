@@ -1,5 +1,7 @@
 # 07. Canvas, A2UI, Skills
 
+> ⚠️ **구현 디테일 정정.** 실제 코드 기반 분석은 [deep-dive/04-channels-canvas.md](./deep-dive/04-channels-canvas.md). 정정 사항: Canvas 번들러는 **Rolldown** (Vite팀 차세대 번들러). A2UI 프레임워크는 **Lit + `@a2ui/lit` 0.9.3** (React 아님). 라이브 리로드는 `/__openclaw__/ws` WebSocket으로 `"reload"` 문자열 1개만 전송 후 `location.reload()`.
+
 ## Canvas — 라이브 사용자 인터페이스
 
 **Canvas**는 OpenClaw의 시그니처 기능 중 하나로, 에이전트가 사용자에게 **라이브 GUI를 렌더링**할 수 있게 합니다. 단순 텍스트 응답을 넘어 인터랙티브한 위젯, 대시보드, 폼 등을 직접 그릴 수 있습니다.

@@ -10,6 +10,9 @@ OpenClaw는 **TypeScript/Node.js 기반 개인 AI 어시스턴트 플랫폼**입
 
 ## 목차
 
+### 개요 (Overview)
+가이드 문서(AGENTS.md/CLAUDE.md) 기반의 광범위 개요. 빠른 이해용.
+
 | 문서 | 내용 |
 |------|------|
 | [01-architecture.md](./01-architecture.md) | 모노레포 구조와 전체 아키텍처 개요 |
@@ -22,6 +25,18 @@ OpenClaw는 **TypeScript/Node.js 기반 개인 AI 어시스턴트 플랫폼**입
 | [08-clients.md](./08-clients.md) | macOS/iOS/Android/Web 클라이언트 |
 | [09-tooling.md](./09-tooling.md) | 개발/테스트/배포 도구체인 |
 | [10-design-principles.md](./10-design-principles.md) | 핵심 설계 철학과 보안 모델 |
+
+### Deep Dive (실제 코드 분석)
+실제 `.ts` 소스 코드를 직접 읽어 검증한 분석. 파일 경로 + 라인 번호 인용. 가이드 문서가 아닌 진짜 구현 기준.
+
+| 문서 | 내용 |
+|------|------|
+| [deep-dive/01-gateway.md](./deep-dive/01-gateway.md) | Gateway 서브시스템 — `ws` + TypeBox/AJV, 6가지 인증 모드, 핸드셰이크 trace, startup flow 9단계 |
+| [deep-dive/02-plugin-loader.md](./deep-dive/02-plugin-loader.md) | 플러그인 로더 — 매니페스트 256KB/JSON5, LRU 512, POSIX 검증, lazy runtime 실제 구현, Telegram(grammy)/Anthropic(`@mariozechner/pi-ai`) 의존성 |
+| [deep-dive/03-agent-runtime.md](./deep-dive/03-agent-runtime.md) | Agent 런타임 — `AgentRuntimePlan` 9영역, `runEmbeddedPiAgent` 실제 흐름, subagent spawn 구현, Active Memory **15초 timeout** + circuit breaker, promptStyle 6가지 |
+| [deep-dive/04-channels-canvas.md](./deep-dive/04-channels-canvas.md) | 채널 & Canvas — Discord(carbon **안 씀**), iMessage(**imsg CLI + JSON-RPC**), Canvas(**Rolldown** 번들러, **Lit + @a2ui/lit**), MCP(stdio/SSE/streamable-http) |
+
+> ⚠️ Deep Dive 문서들이 일부 개요 문서의 추정치를 정정합니다 (예: Active Memory timeout 5초→15초, Discord carbon 미사용 등).
 
 ## 분석 대상
 
