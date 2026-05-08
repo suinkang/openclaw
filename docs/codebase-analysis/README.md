@@ -38,6 +38,22 @@ OpenClaw는 **TypeScript/Node.js 기반 개인 AI 어시스턴트 플랫폼**입
 
 > ⚠️ Deep Dive 문서들이 일부 개요 문서의 추정치를 정정합니다 (예: Active Memory timeout 5초→15초, Discord carbon 미사용 등).
 
+### Architecture (UML + Software Design)
+UML 다이어그램(Component, Class, Sequence, State, ER) 및 소프트웨어 아키텍처 개념으로 표현한 시스템 설계 문서. 모든 다이어그램은 Mermaid 형식.
+
+| 문서 | UML 종류 | 내용 |
+|------|---------|------|
+| [architecture/00-system-context.md](./architecture/00-system-context.md) | C4 Context + Container | 외부 시스템 경계, 컨테이너 배치 |
+| [architecture/01-component-diagram.md](./architecture/01-component-diagram.md) | UML Component | 모듈 의존 관계, 의존성 방향 규칙 |
+| [architecture/02-class-diagrams.md](./architecture/02-class-diagrams.md) | UML Class | 핵심 도메인 모델 (15+ 클래스 다이어그램) |
+| [architecture/03-data-flow.md](./architecture/03-data-flow.md) | Sequence | 12개 시퀀스 (메시지/페어링/spawn/OAuth 등) |
+| [architecture/04-state-machines.md](./architecture/04-state-machines.md) | StateDiagram | 14개 상태 머신 |
+| [architecture/05-storage-persistence.md](./architecture/05-storage-persistence.md) | ER + Tree | 디렉토리 구조, 파일 포맷, SQLite 스키마 |
+| [architecture/06-concurrency.md](./architecture/06-concurrency.md) | Activity + Sequence | Lane/Queue/AbortController/Rate limiter |
+| [architecture/07-error-resilience.md](./architecture/07-error-resilience.md) | Decision Tree | Retry/Circuit/Failover/Durability 패턴 |
+| [architecture/08-design-patterns.md](./architecture/08-design-patterns.md) | (참조) | GoF/엔터프라이즈 패턴 카탈로그 (30+) |
+| [architecture/09-deployment.md](./architecture/09-deployment.md) | Deployment | Docker/Fly.io/Render/모바일 배치 |
+
 ## 분석 대상
 
 - 분석 시점: 2026-05-08
